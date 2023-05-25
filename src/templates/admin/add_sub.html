@@ -1,0 +1,37 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/add_sub_post">
+  <table width="200" border="1">
+    <tr>
+      <th scope="row">Course</th>
+      <td>
+          <select class="form-control" name="select">
+          {% for i in data %}
+              <option value="{{ i['cid'] }}">{{ i['course'] }}</option>
+          {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Subject</th>
+      <td><input class="form-control" required  type="text" name="textfield2"></td>
+    </tr>
+    <tr>
+      <th scope="row">Semester</th>
+      <td><select class="form-control" name="select2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="ADD"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

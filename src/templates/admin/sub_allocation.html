@@ -1,0 +1,29 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/sub_allo_post">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+      <th scope="row">Subject</th>
+      <td><select name="select">
+          {% for i in sub %}
+          <option value="{{ i['sub_id'] }}">{{ i['subject'] }}</option>
+          {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Staff</th>
+      <td><select name="select2">
+           {% for i in staff %}
+          <option value="{{ i['staff_lid'] }}">{{ i['name'] }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="ALLOCATE"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

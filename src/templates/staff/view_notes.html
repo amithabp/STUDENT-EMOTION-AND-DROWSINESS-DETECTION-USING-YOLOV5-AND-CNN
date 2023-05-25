@@ -1,0 +1,26 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table border="1" class="table table-striped">
+    <tr>
+      <th>SUBJECT</th>
+      <th>NOTES</th>
+      <th>DATE</th>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+      <tr>
+      <td>{{ i['subject'] }}</td>
+      <td><a href="{{ i['note'] }}" download>Download note</a></td>
+      <td>{{ i['date'] }}&nbsp;</td>
+      <td><a href="/delete_note?id={{ i['note_id'] }}">DELETE</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4" align="center"><a href="/add_notes#about">ADD</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

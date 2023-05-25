@@ -1,0 +1,36 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table width="200" border="0" class="table table-striped">
+    <tr>
+      <th scope="row">NAME</th>
+      <th scope="row">GENDER</th>
+      <td>PLACE</td>
+      <td>POST</td>
+      <td>PHONE</td>
+      <td>EMAIL</td>
+      <td>COURSE</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+      <tr>
+      <td >{{ i['name'] }}</td>
+      <td >{{ i['gender'] }}</td>
+      <td>{{ i['place'] }}</td>
+      <td>{{ i['post'] }}</td>
+      <td>{{ i['phone'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['course'] }}</td>
+      <td><a href="/edit_student?id={{ i['lid'] }}#about">EDIT</a></td>
+      <td><a href="/delete_student?id={{ i['lid'] }}">DELETE</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <th colspan="9" scope="row"><a href="/add_student#about">ADD</a></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

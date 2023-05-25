@@ -1,0 +1,26 @@
+{% extends 'student/student_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table  border="0" class="table table-striped">
+    <tr>
+      <th>STAFF</th>
+      <th>DOUBT</th>
+      <th>DATE</th>
+      <th>REPLY</th>
+    </tr>
+    {% for i in data %}
+      <tr>
+      <td>{{ i['name'] }}</td>
+      <td>&nbsp;{{ i['doubt'] }}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>{{ i['reply'] }}</td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><a href="/ask_doubt#about">ADD</a> </th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

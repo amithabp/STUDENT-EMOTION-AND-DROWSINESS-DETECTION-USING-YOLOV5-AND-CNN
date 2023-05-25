@@ -1,0 +1,49 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/edit_stud_post">
+  <table border="1">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input value="{{ stud['name'] }}" type="text" name="textfield"></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><input name="radiobutton" {% if stud['gender']=="male" %} checked {% endif %} type="radio" value="male">
+        MALE 
+        <input name="radiobutton" {% if stud['gender']=="female" %} checked {% endif %} type="radio" value="female">
+        FEMALE 
+        <input name="radiobutton" {% if stud['gender']=="others" %} checked {% endif %} type="radio" value="others">
+        OTHERS </td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input value="{{ stud['place'] }}" type="text" name="textfield2"></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><input value="{{ stud['post'] }}" type="text" name="textfield22"></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input value="{{ stud['phone'] }}" type="text" name="textfield3"></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><input type="text" value="{{ stud['email'] }}" name="textfield4"></td>
+    </tr>
+    <tr>
+      <th scope="row">Course</th>
+      <td><select name="select2">
+          {% for i in data %}
+              <option {% if stud['course_id']== i['cid']  %} selected {% endif %}  value="{{ i['cid'] }}">{{ i['course'] }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+   <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="UPDATE"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

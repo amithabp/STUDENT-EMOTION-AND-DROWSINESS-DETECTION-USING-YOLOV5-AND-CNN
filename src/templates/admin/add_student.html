@@ -1,0 +1,57 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/add_stud_post">
+  <table border="1">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="form-control" pattern="[A-Z a-z.]{3,25}" required  type="text" name="textfield"></td>
+    </tr>
+    <tr>
+      <th scope="row">Gender</th>
+      <td><input  checked name="radiobutton" type="radio" value="male">
+        MALE 
+        <input name="radiobutton" type="radio" value="female">
+        FEMALE 
+        <input name="radiobutton" type="radio" value="others">
+        OTHERS </td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input class="form-control" pattern="[A-Z a-z.]{3,25}" required  type="text" name="textfield2"></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><input class="form-control" pattern="[A-Z a-z.]{3,25}" required  type="text" name="textfield22"></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input class="form-control"  maxlength="10" pattern="[6-9]{1}[0-9]{9}" required  type="text" name="textfield3"></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><input class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" type="text" name="textfield4"></td>
+    </tr>
+    <tr>
+      <th scope="row">Course</th>
+      <td><select class="form-control"  name="select2">
+          {% for i in data %}
+              <option value="{{ i['cid'] }}">{{ i['course'] }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td><input class="form-control" required  type="text" name="textfield5"></td>
+    </tr>
+    <tr>
+      <th scope="row">Password</th>
+      <td><input class="form-control" required  type="text" name="textfield6"></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="ADD"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

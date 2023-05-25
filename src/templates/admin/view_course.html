@@ -1,0 +1,22 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table  border="0" class="table table-striped">
+    <tr>
+      <th scope="row">COURSE</th>
+      <td>&nbsp;</td>
+    </tr>
+   {% for i in data %}
+       <tr>
+      <td scope="row">{{ i['course'] }}</td>
+      <td><a href="/delete_course?id={{ i['cid'] }}">DELETE</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="2" align="center"><a href="/add_course#about">ADD</a></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

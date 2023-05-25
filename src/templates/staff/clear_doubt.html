@@ -1,0 +1,16 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form action="/reply_doubt" method="post" enctype="multipart/form-data" name="form1">
+  <table border="1">
+    <tr>
+      <td>Reply</td>
+      <td><input type="text" name="textfield"></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="SEND"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

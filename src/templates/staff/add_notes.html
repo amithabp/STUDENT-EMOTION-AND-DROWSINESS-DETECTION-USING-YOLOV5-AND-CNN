@@ -1,0 +1,24 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form action="/add_note_post" method="post" enctype="multipart/form-data" name="form1">
+  <table width="200" border="1">
+    <tr>
+      <td>Subject</td>
+      <td><select name="select">
+          {% for i in data %}
+          <option value="{{ i['sub_id'] }}">{{ i['subject'] }}</option>
+          {% endfor %}
+      </select>      </td>
+    </tr>
+    <tr>
+      <td>Note</td>
+      <td><input type="file" name="file"></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="ADD"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

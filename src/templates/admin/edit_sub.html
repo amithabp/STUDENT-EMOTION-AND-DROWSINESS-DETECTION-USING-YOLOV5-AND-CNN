@@ -1,0 +1,37 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/edit_sub_post">
+  <table width="200" border="1">
+    <tr>
+      <th scope="row">Course</th>
+      <td>
+          <select name="select">
+          {% for i in data %}
+              <option {% if i['cid']== val['courde_id'] %}selected{% endif %} value="{{ i['cid'] }}">{{ i['course'] }}</option>
+          {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Subject</th>
+      <td><input value="{{ val['subject'] }}" type="text" name="textfield2"></td>
+    </tr>
+    <tr>
+      <th scope="row">Semester</th>
+      <td><select name="select2">
+          <option {% if val['semester']=="1" %} selected {% endif %}>1</option>
+          <option {% if val['semester']=="2" %} selected {% endif %}>2</option>
+          <option {% if val['semester']=="3" %} selected {% endif %}>3</option>
+          <option {% if val['semester']=="4" %} selected {% endif %}>4</option>
+          <option {% if val['semester']=="5" %} selected {% endif %}>5</option>
+          <option {% if val['semester']=="6" %} selected {% endif %}>6</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="ADD"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'student/student_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table border="0" class="table table-striped">
+    <tr>
+      <td>SUBJECT</td>
+      <td>NOTES</td>
+      <td>DATE</td>
+    </tr>
+    {% for i in data %}
+      <tr>
+      <td>{{ i['subject'] }}</td>
+      <td><a href="{{ i['note'] }}" download>Download note</a></td>
+{#      <td>{{ i['note'] }}</td>#}
+      <td>{{ i['date'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

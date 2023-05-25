@@ -1,0 +1,19 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table class="table table-hover">
+    <tr>
+      <th>SUBJECT</th>
+      <th>SCORE</th>
+    </tr>
+    {% for i in data %}
+      <tr>
+      <td>{{ i['subject'] }}</td>
+      <td>{{ i['avgscr'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

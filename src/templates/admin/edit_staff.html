@@ -1,0 +1,28 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="/edit_staff_post">
+  <table width="200" border="1">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input type="text" value="{{ data['name'] }}" name="textfield"></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><input type="text" value="{{ data['place'] }}" name="textfield2"></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone</th>
+      <td><input type="text" value="{{ data['phone'] }}" name="textfield3"></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><input type="text" value="{{ data['email'] }}" name="textfield4"></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" value="UPDATE"></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

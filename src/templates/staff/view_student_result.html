@@ -1,0 +1,24 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table border="0" class="table table-striped">
+    <tr>
+      <th>STUDENT</th>
+      <th>SUBJECT</th>
+      <th>MARK</th>
+    </tr>
+   {% for i in data %}
+       <tr>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['subject'] }}</td>
+      <td>{{ i['mark'] }}</td>
+    </tr>
+      {% endfor %}
+      <tr>
+          <td><a href="/add_student_result#about">ADD</a> </td>
+      </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

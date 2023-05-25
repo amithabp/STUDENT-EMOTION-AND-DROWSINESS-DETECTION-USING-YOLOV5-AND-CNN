@@ -1,0 +1,27 @@
+{% extends 'staff/staff_index.html' %}
+{% block body %}
+<body>
+<form name="form1" method="post" action="">
+  <table border="1" class="table table-striped">
+    <tr>
+      <th>STUDENT</th>
+      <th>DOUBT</th>
+      <th>DATE</th>
+      <th>REPLY</td>
+    </tr>
+   {% for i in data %}
+       <tr>
+      <td>{{ i['name'] }}&nbsp;</td>
+      <td>{{ i['doubt'] }}&nbsp;</td>
+      <td>{{ i['date'] }}&nbsp;</td>
+           {% if i['reply']=='pending' %}
+      <td><a href="/clear_doubt?id={{ i['doubt_id'] }}#about">REPLY</a> </td>
+       {% else %}
+       <td>{{ i['reply'] }}</td>
+       {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
